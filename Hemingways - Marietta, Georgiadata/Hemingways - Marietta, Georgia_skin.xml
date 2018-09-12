@@ -1,0 +1,1337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano version="1.19">
+
+    
+  <!-- Spot Style - Default Point Spot Style -->
+
+
+  <style name="IconDefaultPointSpotStyle"
+         url="%FIRSTXML%/spots/hotspot__icon21_user_defaultpoint0.png"
+         visible="false"
+         edge="center"
+         onhover="onhoverIconDefaultPointSpotStyle"
+         onover="onoverIconDefaultPointSpotStyle"
+         onout="onoutIconDefaultPointSpotStyle"
+
+         height="40"
+         width="40"
+         />
+  <action name="onhoverIconDefaultPointSpotStyle">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoverIconDefaultPointSpotStyle">
+
+
+pauseautorotation(forcehotspot);
+
+  </action>
+  <action name="onoutIconDefaultPointSpotStyle">
+    hideTooltip();
+
+
+resumeautorotation(forcehotspot);
+
+  </action>
+
+
+
+  <!-- unsupported kind of display : PointMap -->
+
+
+    
+  <!-- Spot Style - hemingspot_bar -->
+
+
+  <style name="Iconhemingspot_bar"
+         url="%FIRSTXML%/spots/hemingspot_user_defaultpoint41_2.png"
+         visible="false"
+         edge="center"
+         alpha="0.8"
+         onhover="onhoverIconhemingspot_bar"
+         onover="onoverIconhemingspot_bar"
+         onout="onoutIconhemingspot_bar"
+
+         height="100"
+         width="100"
+         />
+  <action name="onhoverIconhemingspot_bar">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoverIconhemingspot_bar">
+tween(scale, 1.2);
+tween(alpha, 1);
+pauseautorotation(forcehotspot);
+
+  </action>
+  <action name="onoutIconhemingspot_bar">
+    hideTooltip();
+    tween(scale, 1);
+    tween(alpha, 0.8);
+resumeautorotation(forcehotspot);
+
+  </action>
+
+
+
+    
+  <!-- Spot Style - hemingspot_2 -->
+
+
+  <style name="Iconhemingspot_2"
+         url="%FIRSTXML%/spots/hemingspot_user_defaultpoint41_3.png"
+         visible="false"
+         edge="center"
+         alpha="0.8"
+         onhover="onhoverIconhemingspot_2"
+         onover="onoverIconhemingspot_2"
+         onout="onoutIconhemingspot_2"
+
+         height="100"
+         width="100"
+         />
+  <action name="onhoverIconhemingspot_2">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoverIconhemingspot_2">
+tween(scale, 1.2);
+tween(alpha, 1);
+pauseautorotation(forcehotspot);
+
+  </action>
+  <action name="onoutIconhemingspot_2">
+    hideTooltip();
+    tween(scale, 1);
+    tween(alpha, 0.8);
+resumeautorotation(forcehotspot);
+
+  </action>
+
+
+
+    
+  <!-- Spot Style - hemingspot_patio -->
+
+
+  <style name="Iconhemingspot_patio"
+         url="%FIRSTXML%/spots/hemingspot_user_defaultpoint41_4.png"
+         visible="false"
+         edge="center"
+         alpha="0.8"
+         onhover="onhoverIconhemingspot_patio"
+         onover="onoverIconhemingspot_patio"
+         onout="onoutIconhemingspot_patio"
+
+         height="100"
+         width="100"
+         />
+  <action name="onhoverIconhemingspot_patio">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoverIconhemingspot_patio">
+tween(scale, 1.2);
+tween(alpha, 1);
+pauseautorotation(forcehotspot);
+
+  </action>
+  <action name="onoutIconhemingspot_patio">
+    hideTooltip();
+    tween(scale, 1);
+    tween(alpha, 0.8);
+resumeautorotation(forcehotspot);
+
+  </action>
+
+
+
+    
+  <!-- Spot Style - hemingspot_3 -->
+
+
+  <style name="Iconhemingspot_3"
+         url="%FIRSTXML%/spots/restrooms_hemingways_user_defaultpoint41_6.png"
+         visible="false"
+         edge="center"
+         zoom="true"
+
+         alpha="0.8"
+         onloaded="if(scene[get(xml.scene)].planar,if(zoom,set(zoom, false);););"
+         onhover="onhoverIconhemingspot_3"
+         onover="onoverIconhemingspot_3"
+         onout="onoutIconhemingspot_3"
+
+         height="20"
+         width="120"
+         />
+  <action name="onhoverIconhemingspot_3">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoverIconhemingspot_3">
+
+tween(alpha, 1);
+
+  </action>
+  <action name="onoutIconhemingspot_3">
+    hideTooltip();
+
+    tween(alpha, 0.8);
+
+  </action>
+
+
+
+<!-- ********** -->
+<!-- Logo -->
+<!-- id : logo -->
+<!-- ********** -->
+
+
+  <hotspot ath="0" atv="90"
+         zorder="0"
+         name="logo"
+         keep="true"
+         visible="false"
+         capture="false"
+
+			tooltip="logotooltipText"
+			onhover="showTooltip('hotspot');"
+			onout="hideTooltip();"
+         url="%FIRSTXML%/graphics/logo/hemingways_logo.png" 
+         onclick="
+getmessage(urltoopen,logowebsiteurl);openurl(get(urltoopen),_blank);
+"
+
+         height="500"
+         width="500"
+
+         />
+
+  <events name="logoevents" 
+    onTourStart="showlogo();"
+    keep="true" />
+
+  <action name="hidelogo">
+    set(hotspot[logo].visible, false);
+  </action>
+  <action name="showlogo">
+      set(hotspot[logo].visible, true);
+  </action>
+
+
+
+  <events name="logoshowevents" onremovepano="hidelogo" onPanoStart="showlogo" keep="true"/>
+
+
+
+<!-- ********** -->
+<!-- Classic Control Bar -->
+<!-- id : controlBar_classic -->
+<!-- ********** -->
+
+  <krpano controlBar_classicbarbuilt="false" controlBar_classicbackgroundwidthwhenclosed="0" controlBar_classicbackgroundwidthwhenopened="0" controlBar_classicIsOpened="false" />
+  <events name="controlBar_classicevents" 
+    onxmlcomplete="controlBar_classicbuildMenuBar();" 
+
+
+    keep="true" />
+
+
+
+  <action name="controlBar_classicbuildMenuBar">
+    ifnot (controlBar_classicbarbuilt, controlBar_classicbuildMenu(); set(controlBar_classicbarbuilt, true););
+  </action>
+
+  <action name="controlBar_classicbuildMenu">
+    
+    set(controlBar_classicbutton_pos, 20);
+
+    set(layer[controlBar_classicbtn_hidecontrols].x, get(controlBar_classicbutton_pos));
+    set(layer[controlBar_classicbtn_showcontrols].x, get(controlBar_classicbutton_pos));
+    inc(controlBar_classicbutton_pos, 36);
+    add(controlBar_classicbackgroundwidthwhenclosed, get(controlBar_classicbutton_pos), 20);
+
+
+
+    if (device.desktop,
+      set(layer[controlBar_classicbtn_display_help].x, get(controlBar_classicbutton_pos));
+      set(layer[controlBar_classicbtn_close_help  ].x, get(controlBar_classicbutton_pos));
+      inc(controlBar_classicbutton_pos, 36);
+    );
+
+    if (device.fullscreensupport,
+      set(layer[controlBar_classicbtn_openfs ].x, get(controlBar_classicbutton_pos));
+      set(layer[controlBar_classicbtn_closefs].x, get(controlBar_classicbutton_pos));
+      inc(controlBar_classicbutton_pos, 36);
+    );
+
+
+
+    set(layer[controlBar_classicbtn_autorotate_on ].x, get(controlBar_classicbutton_pos));
+    set(layer[controlBar_classicbtn_autorotate_off].x, get(controlBar_classicbutton_pos));
+    inc(controlBar_classicbutton_pos, 36);
+
+
+
+    if (device.desktop,
+      set(layer[controlBar_classicbtn_ctrlmode_drag_to].x, get(controlBar_classicbutton_pos));
+      set(layer[controlBar_classicbtn_ctrlmode_move_to].x, get(controlBar_classicbutton_pos));
+      inc(controlBar_classicbutton_pos, 36);
+    );
+
+
+
+
+
+    if (device.desktop,
+        set(layer[controlBar_classicbtn_right].x, get(controlBar_classicbutton_pos));
+        inc(controlBar_classicbutton_pos, 36);
+        set(layer[controlBar_classicbtn_left].x, get(controlBar_classicbutton_pos));
+        inc(controlBar_classicbutton_pos, 36);
+    );
+    if (device.desktop,
+        set(layer[controlBar_classicbtn_down].x, get(controlBar_classicbutton_pos));
+        inc(controlBar_classicbutton_pos, 36);
+        set(layer[controlBar_classicbtn_up].x, get(controlBar_classicbutton_pos));
+        inc(controlBar_classicbutton_pos, 36);
+    );
+    if (device.desktop,
+        set(layer[controlBar_classicbtn_out].x, get(controlBar_classicbutton_pos));
+        inc(controlBar_classicbutton_pos, 36);
+        set(layer[controlBar_classicbtn_in].x, get(controlBar_classicbutton_pos));
+        inc(controlBar_classicbutton_pos, 36);
+    );
+    if (scene.count GT 1,
+        set(layer[controlBar_classicbtn_next_pano].x, get(controlBar_classicbutton_pos));
+        inc(controlBar_classicbutton_pos, 36);
+        set(layer[controlBar_classicbtn_prev_pano].x, get(controlBar_classicbutton_pos));
+        inc(controlBar_classicbutton_pos, 36);
+      );
+
+
+
+    inc(controlBar_classicbutton_pos, 20);
+
+    set(controlBar_classicbackgroundwidthwhenopened, get(controlBar_classicbutton_pos));
+
+
+
+    
+    add(controlBar_classicVerifyVisibility, 20, 20);
+    if(controlBar_classicbackgroundwidthwhenopened == controlBar_classicVerifyVisibility,
+      set(controlBar_classicbackgroundwidthwhenopened, 0);
+
+
+    );
+
+	
+	
+  </action>
+
+	<events name="controlBar_classicStartTourEvents" onTourStart="controlBar_classicCallOnStartTour();" keep="true" />
+
+	<action name="controlBar_classicCallOnStartTour">
+		
+		set(layer[controlBar_classicmenu_controlbar_bg_img].width, get(controlBar_classicbutton_pos));
+		set(layer[controlBar_classicmenu_controlbar_bg].width, get(controlBar_classicbutton_pos));
+		controlBar_classicshowMenuControls();
+	</action>
+
+
+
+  <style name="controlBar_classic_btn_style"
+         keep="true"
+         alpha="0.8"
+         edge="right" align="right"
+         width="36" height="36"
+         zorder="4"
+         onover="controlBar_classicctrlbaronoveraction();"
+         onout="controlBar_classicctrlbaronoutaction();"
+         onhover="showTooltip('plugin', controlBar_classicmenuTooltipStyle, bottom);"
+         />
+  <action name="controlBar_classicctrlbaronoveraction">
+    tween(alpha,1,0.1,easeoutquad);
+    tween(y,-2,0.1,easeoutquad);
+  </action>  
+  <action name="controlBar_classicctrlbaronoutaction">
+    tween(alpha,0.8);
+    tween(y,0,0.1,easeoutquad);
+    hideTooltip();
+  </action>
+
+  <layer name="controlBar_classicmenu_controlbar_bg_img"
+         keep="true"
+         align="bottom"
+         x="0" y="10"
+         url="%FIRSTXML%/graphics/classiccontrolbar/footer.png"
+         zorder="2"
+         width="40"
+         height="40"
+         scale9grid="10|10|80|80"
+         visible="false"
+         />
+  <layer name="controlBar_classicmenu_controlbar_bg"
+         keep="true"
+         align="bottom"
+         x="0" y="10"
+         type="container"
+         zorder="3"
+         width="40"
+         height="40"
+         visible="false"
+         alpha="1.0"
+         >
+
+
+
+    <layer name="controlBar_classicbtn_ctrlmode_move_to"
+            url="%FIRSTXML%/graphics/classiccontrolbar/btn_move_to.png"
+            style="controlBar_classic_btn_style"
+            tooltip="controlBar_classicctrlmodeMoveTip"
+            onclick="setControlModeMoveTo();
+"
+            visible="false"
+            devices="desktop"
+            />
+    <layer name="controlBar_classicbtn_ctrlmode_drag_to"
+            url="%FIRSTXML%/graphics/classiccontrolbar/btn_drag_to.png"
+            style="controlBar_classic_btn_style"
+            tooltip="controlBar_classicctrlmodeDragTip"
+            onclick="setControlModeDragTo();
+"
+            visible="false"
+            devices="desktop"
+            />
+
+    <layer name="controlBar_classicbtn_in"
+            url="%FIRSTXML%/graphics/classiccontrolbar/btn_zoom_in.png"
+            ondown="viewControlZoomIn(false);"
+            onup="viewControlZoomStop();
+"
+            style="controlBar_classic_btn_style"
+            tooltip="controlBar_classiczoomInTip"
+            devices="desktop"
+            visible="false"
+            />
+    <layer name="controlBar_classicbtn_out"
+            url="%FIRSTXML%/graphics/classiccontrolbar/btn_zoom_out.png"
+            ondown="viewControlZoomOut(false);
+"
+            onup="viewControlZoomStop();
+"
+            style="controlBar_classic_btn_style"
+            tooltip="controlBar_classiczoomOutTip"
+            devices="desktop"
+            visible="false"
+            />
+
+    <layer name="controlBar_classicbtn_left"
+            url="%FIRSTXML%/graphics/classiccontrolbar/btn_move_left.png"
+            ondown="viewControlMoveLeft(false);
+"
+            onup="viewControlMoveHoriStop();
+"
+            style="controlBar_classic_btn_style"
+            tooltip="controlBar_classicmoveLeftTip"
+            devices="desktop"
+            visible="false"
+            />
+    <layer name="controlBar_classicbtn_right"
+            url="%FIRSTXML%/graphics/classiccontrolbar/btn_move_right.png"
+            ondown="viewControlMoveRight(false);
+"
+            onup="viewControlMoveHoriStop();
+"
+            style="controlBar_classic_btn_style"
+            tooltip="controlBar_classicmoveRightTip"
+            devices="desktop"
+            visible="false"
+            />
+
+    <layer name="controlBar_classicbtn_up"
+            url="%FIRSTXML%/graphics/classiccontrolbar/btn_move_up.png"
+            ondown="viewControlMoveUp(false);
+"
+            onup="viewControlMoveVertStop();
+"
+            style="controlBar_classic_btn_style"
+            tooltip="controlBar_classicmoveUpTip"
+            devices="desktop"
+            visible="false"
+            />
+    <layer name="controlBar_classicbtn_down"
+            url="%FIRSTXML%/graphics/classiccontrolbar/btn_move_down.png"
+            ondown="viewControlMoveDown(false);
+"
+            onup="viewControlMoveVertStop();
+"
+            style="controlBar_classic_btn_style"
+            tooltip="controlBar_classicmoveDownTip"
+            devices="desktop"
+            visible="false"
+            />
+
+
+
+    <layer name="controlBar_classicbtn_prev_pano"
+            url="%FIRSTXML%/graphics/classiccontrolbar/btn_previous_scene.png"
+            onclick="loadPreviousScene();
+"
+            style="controlBar_classic_btn_style"
+            tooltip="controlBar_classicprevSceneTip"
+            visible="false"
+            />
+    <layer name="controlBar_classicbtn_next_pano"
+            url="%FIRSTXML%/graphics/classiccontrolbar/btn_next_scene.png"
+            onclick="loadNextScene();
+"
+            style="controlBar_classic_btn_style"
+            tooltip="controlBar_classicnextSceneTip"
+            visible="false"
+            />
+
+
+
+    <layer name="controlBar_classicbtn_openfs"
+            url="%FIRSTXML%/graphics/classiccontrolbar/btn_enter_fs.png"
+            onclick="enterFullscreen();
+"
+            style="controlBar_classic_btn_style"
+            devices="fullscreensupport"
+            visible="false"
+            tooltip="controlBar_classicopenFsTip"
+            />
+    <layer name="controlBar_classicbtn_closefs"
+            url="%FIRSTXML%/graphics/classiccontrolbar/btn_close_fs.png"
+            onclick="exitFullscreen();
+"
+            style="controlBar_classic_btn_style"
+            visible="false"
+            devices="fullscreensupport"
+            tooltip="controlBar_classiccloseFsTip"
+            />
+
+    <layer name="controlBar_classicbtn_autorotate_on"
+            url="%FIRSTXML%/graphics/classiccontrolbar/btn_start_autorotation.png"
+            onclick="resumeautorotation();
+"
+            style="controlBar_classic_btn_style"
+            visible="false"
+            tooltip="controlBar_classicautorotateOnTip"
+            />
+    <layer name="controlBar_classicbtn_autorotate_off"
+            url="%FIRSTXML%/graphics/classiccontrolbar/btn_stop_autorotation.png"
+            onclick="pauseautorotation();
+"
+            style="controlBar_classic_btn_style"
+            visible="false"
+            tooltip="controlBar_classicautorotateOffTip"
+            />
+
+
+
+    <layer name="controlBar_classicbtn_display_help"
+            url="%FIRSTXML%/graphics/classiccontrolbar/btn_help.png"
+            onclick="controlBar_classicdisplayHelp();"
+            style="controlBar_classic_btn_style"
+            devices="desktop"
+            visible="false"
+            tooltip="controlBar_classicdisplayHelpTip"
+            />
+    <layer name="controlBar_classicbtn_close_help"
+            url="%FIRSTXML%/graphics/classiccontrolbar/btn_help.png"
+            onclick="controlBar_classiccloseHelp();"
+            style="controlBar_classic_btn_style"
+            visible="false"
+            devices="desktop"
+            tooltip="controlBar_classichideHelpTip"
+            />
+
+
+
+    <layer name="controlBar_classicbtn_hidecontrols"
+            url="%FIRSTXML%/graphics/classiccontrolbar/btn_hide_controls.png"
+            style="controlBar_classic_btn_style"
+            onclick="controlBar_classichideMenuControls();hideTourControls();
+"
+            visible="false"
+            tooltip="controlBar_classichideControlsTip"
+            />
+    <layer name="controlBar_classicbtn_showcontrols"
+            url="%FIRSTXML%/graphics/classiccontrolbar/btn_show_controls.png"
+            style="controlBar_classic_btn_style"
+            onclick="controlBar_classicshowMenuControls();showTourControls();
+"
+            tooltip="controlBar_classicdisplayControlsTip"
+            visible="false"
+            />
+  </layer>
+
+
+
+
+	<events name="controlBar_classiccontrolmodechangedevent" 
+		oncontrolmodechanged="controlBar_classicupdateControlModeButtons();" 
+		keep="true" />
+	<action name="controlBar_classicHideControlModeButtons">
+		set(layer[controlBar_classicbtn_ctrlmode_move_to].visible, false);
+		set(layer[controlBar_classicbtn_ctrlmode_drag_to].visible, false);
+	</action>
+	<action name="controlBar_classicShowControlModeButtons">
+		if (tour_controlmodemousetype == "moveto",
+			set(layer[controlBar_classicbtn_ctrlmode_drag_to].visible, true);
+			set(layer[controlBar_classicbtn_ctrlmode_move_to].visible, false);
+		,
+			set(layer[controlBar_classicbtn_ctrlmode_move_to].visible, true);
+			set(layer[controlBar_classicbtn_ctrlmode_drag_to].visible, false);
+		);
+	</action>
+	<action name="controlBar_classicupdateControlModeButtons">
+	if (device.desktop,
+		if (controlBar_classicIsOpened,
+			controlBar_classicShowControlModeButtons();
+		,
+			controlBar_classicHideControlModeButtons();
+		);
+	,
+		controlBar_classicHideControlModeButtons();
+	);
+	</action>
+
+
+  <action name="controlBar_classichideMenuControls">
+    set(controlBar_classicIsOpened, false);
+    set(layer[controlBar_classicbtn_hidecontrols].visible, false);
+    set(layer[controlBar_classicbtn_showcontrols].visible, true);
+    controlBar_classicupdateFullscreenButtons();
+
+
+    if (scene.count GT 1,
+    set(layer[controlBar_classicbtn_prev_pano].visible, false);
+    set(layer[controlBar_classicbtn_next_pano].visible, false);
+    );
+    controlBar_classicupdateAutorotationButtons();
+
+
+    set(layer[controlBar_classicbtn_up].visible  , false);
+    set(layer[controlBar_classicbtn_down].visible, false);
+    set(layer[controlBar_classicbtn_right].visible, false);
+    set(layer[controlBar_classicbtn_left].visible , false);
+    set(layer[controlBar_classicbtn_in].visible , false);
+    set(layer[controlBar_classicbtn_out].visible, false);
+
+
+    controlBar_classicupdateControlModeButtons();
+
+
+    controlBar_classicupdateHelpButtons();
+
+
+    if(controlBar_classicbackgroundwidthwhenclosed == 0,
+      set(layer[controlBar_classicmenu_controlbar_bg_img].visible, false);
+      set(layer[controlBar_classicmenu_controlbar_bg].visible, false);
+    ,
+      set(layer[controlBar_classicmenu_controlbar_bg_img].visible, true);
+      set(layer[controlBar_classicmenu_controlbar_bg].visible, true);
+    );
+    tween(layer[controlBar_classicmenu_controlbar_bg_img].width,get(controlBar_classicbackgroundwidthwhenclosed),0.5,easeOutQuad);
+    tween(layer[controlBar_classicmenu_controlbar_bg].width,get(controlBar_classicbackgroundwidthwhenclosed),0.5,easeOutQuad);
+    tween(layer[controlBar_classicmenu_controlbar_bg_img].alpha,1.0,0.5,easeOutQuad);
+  </action>
+  <action name="controlBar_classicshowMenuControls">
+    set(controlBar_classicIsOpened, true);
+    set(layer[controlBar_classicbtn_hidecontrols].visible, true);
+    set(layer[controlBar_classicbtn_showcontrols].visible, false);
+    if(controlBar_classicbackgroundwidthwhenopened == 0,
+      set(layer[controlBar_classicmenu_controlbar_bg_img].visible, false);
+      set(layer[controlBar_classicmenu_controlbar_bg].visible, false);
+    ,
+      set(layer[controlBar_classicmenu_controlbar_bg_img].visible, true);
+      set(layer[controlBar_classicmenu_controlbar_bg].visible, true);
+    );
+    tween(layer[controlBar_classicmenu_controlbar_bg_img].alpha,1.0,0.5,easeOutQuad);
+    controlBar_classicshowMenuButtons();
+
+
+      tween(layer[controlBar_classicmenu_controlbar_bg_img].width, get(controlBar_classicbackgroundwidthwhenopened),0.5,easeOutQuad);
+      tween(layer[controlBar_classicmenu_controlbar_bg].width, get(controlBar_classicbackgroundwidthwhenopened),0.5,easeOutQuad);
+
+
+  </action>
+  <action name="controlBar_classicshowMenuButtons">
+    if (device.desktop,
+    set(layer[controlBar_classicbtn_up].visible  , true);
+    set(layer[controlBar_classicbtn_down].visible, true);
+    );
+    if (device.desktop,
+    set(layer[controlBar_classicbtn_right].visible, true);
+    set(layer[controlBar_classicbtn_left].visible , true);
+    );
+    if (device.desktop,
+    set(layer[controlBar_classicbtn_in].visible , true);
+    set(layer[controlBar_classicbtn_out].visible, true);
+    );
+
+
+    controlBar_classicupdateControlModeButtons();
+
+
+    controlBar_classicupdateHelpButtons();
+
+
+    controlBar_classicupdateFullscreenButtons();
+
+
+    if (scene.count GT 1,
+      set(layer[controlBar_classicbtn_prev_pano].visible, true);
+      set(layer[controlBar_classicbtn_next_pano].visible, true);
+    );
+    controlBar_classicupdateAutorotationButtons();
+
+
+  </action>
+
+  <layer name="controlBar_classichelpScreen" align="center" keep="true" onclick="controlBar_classiccloseHelp();" url="%FIRSTXML%/graphics/classiccontrolbar/help_screen_bg.png" visible="false" zorder="97" height="10%" width="prop" />
+
+  <layer name="controlBar_classichelpScreenFg" align="center" keep="true" onclick="controlBar_classiccloseHelp();" displayed="false" 
+         url="%FIRSTXML%/graphics/classiccontrolbar/help_screen_fg.png" 
+         alpha="0.8" 
+         height="50%" 
+         width="prop" 
+         zorder="98"
+         visible="false" />
+  <action name="controlBar_classicdisplayHelp">
+    set(layer[controlBar_classichelpScreenFg].displayed,true);
+    set(layer[controlBar_classichelpScreen].visible,true);
+    tween(layer[controlBar_classichelpScreen].height, 50%, 1, easeOutQuad,
+      set(layer[controlBar_classichelpScreenFg].visible,true);
+    );
+    controlBar_classicupdateHelpButtons();
+  </action>
+  <action name="controlBar_classiccloseHelp">
+    set(layer[controlBar_classichelpScreenFg].displayed,false);
+    set(layer[controlBar_classichelpScreenFg].visible,false);
+    tween(layer[controlBar_classichelpScreen].height, 10%, 1, easeOutQuad,
+      set(layer[controlBar_classichelpScreen].visible,false);
+    );
+    controlBar_classicupdateHelpButtons();
+  </action>
+	<action name="controlBar_classicHideHelpButtons">
+		set(layer[controlBar_classicbtn_display_help].visible, false);
+		set(layer[controlBar_classicbtn_close_help].visible, false);
+	</action>
+	<action name="controlBar_classicShowHelpButtons">
+		if (layer[controlBar_classichelpScreenFg].displayed,
+			set(layer[controlBar_classicbtn_close_help].visible, true);
+			set(layer[controlBar_classicbtn_display_help].visible, false);
+		,
+			set(layer[controlBar_classicbtn_display_help].visible, true);
+			set(layer[controlBar_classicbtn_close_help].visible, false);
+		);
+	</action>
+	<action name="controlBar_classicupdateHelpButtons">
+	if (device.desktop,
+		if (controlBar_classicIsOpened,
+			controlBar_classicShowHelpButtons();
+		,
+			controlBar_classicHideHelpButtons();
+		);
+	,
+		controlBar_classicHideHelpButtons();
+	);
+	</action>
+
+
+
+	<events name="controlBar_classicmenufullscreenchangeevent"
+		onenterfullscreen="controlBar_classicupdateFullscreenButtons();"
+		onexitfullscreen="controlBar_classicupdateFullscreenButtons();"
+		keep="true"/>
+	<action name="controlBar_classicHideFullscreenButtons">
+		set(layer[controlBar_classicbtn_openfs].visible , false);
+		set(layer[controlBar_classicbtn_closefs].visible, false);
+	</action>
+	<action name="controlBar_classicShowFullscreenButtons">
+		if (device.fullscreensupport,
+			if(tour_fullscreen,
+				set(layer[controlBar_classicbtn_openfs].visible , false);
+				set(layer[controlBar_classicbtn_closefs].visible, true);
+			,
+				set(layer[controlBar_classicbtn_openfs].visible ,true);
+				set(layer[controlBar_classicbtn_closefs].visible,false);
+			);
+		,
+			controlBar_classicHideFullscreenButtons();
+		);
+	</action>
+	<action name="controlBar_classicupdateFullscreenButtons">
+		if (controlBar_classicIsOpened,
+			controlBar_classicShowFullscreenButtons();
+		,
+			controlBar_classicHideFullscreenButtons();
+		);
+	</action>
+
+	<events name="controlBar_classicAutorotationEvents"
+		onstartautorotation="controlBar_classicupdateAutorotationButtons();"
+		onresumeautorotation="controlBar_classicupdateAutorotationButtons();"
+		onstopautorotation="controlBar_classicupdateAutorotationButtons();"
+		onpauseautorotation="controlBar_classicupdateAutorotationButtons();"
+		keep="true"/>
+	<action name="controlBar_classicHideAutorotationButtons">
+		set(layer[controlBar_classicbtn_autorotate_off].visible, false);
+		set(layer[controlBar_classicbtn_autorotate_on].visible , false);
+	</action>
+	<action name="controlBar_classicShowAutorotationButtons">
+		if(autorotate.enabled == false,
+			set(layer[controlBar_classicbtn_autorotate_off].visible, false);
+			set(layer[controlBar_classicbtn_autorotate_on].visible , true);
+		,
+			set(layer[controlBar_classicbtn_autorotate_off].visible, true);
+			set(layer[controlBar_classicbtn_autorotate_on].visible , false);
+		);
+	</action>
+	<action name="controlBar_classicupdateAutorotationButtons">
+		if (controlBar_classicIsOpened,
+			controlBar_classicShowAutorotationButtons();
+		,
+			controlBar_classicHideAutorotationButtons();
+		);
+	</action>
+
+
+
+
+<layer name="controlBar_classicmenuTooltipStyle"
+	keep="true"
+	enabled="false"
+	capture="false"
+	type="text"
+	align="center"
+	bg="false"
+	bgborder="0"
+	txtshadow="1.0 1.0 4.0 0x000000 1"
+	css="color:#e6e6e6;font-family:Helvetica;font-weight:bold;font-size:14px;text-align:left;"
+	interactivecontent="false"
+	zorder="0"
+	visible="false"
+	html=""
+	padding="2"
+	xoffset="0"
+	yoffset="0"
+	edge="bottom"
+	/>
+
+
+
+<!-- ********** -->
+<!-- GrubHub.com -->
+<!-- id : logo1 -->
+<!-- ********** -->
+
+
+  <layer align="topleft"
+         x="10"
+         y="10"
+         zorder="5"
+         name="logo1"
+         keep="true"
+         visible="false"
+         capture="false"
+
+         url="%FIRSTXML%/graphics/logo1/orderongrubhub.png" 
+         onclick="
+getmessage(urltoopen,logo1websiteurl);openurl(get(urltoopen),_blank);
+"
+
+         height="10%"
+         width="10%"
+
+         />
+
+  <events name="logo1events" 
+    onTourStart="showlogo1();"
+    hidetourcontrols="hidelogo1();"
+    showtourcontrols="showlogo1();"
+    keep="true" />
+
+  <action name="hidelogo1">
+    set(layer[logo1].visible, false);
+  </action>
+  <action name="showlogo1">
+    if (tour_displaycontrols,
+      set(layer[logo1].visible, true);
+    );
+  </action>
+
+
+
+
+
+<!-- ********** -->
+<!-- DoorDash.com -->
+<!-- id : logo3 -->
+<!-- ********** -->
+
+
+  <layer align="topleft"
+         x="150"
+         y="10"
+         zorder="6"
+         name="logo3"
+         keep="true"
+         visible="false"
+         capture="false"
+
+         url="%FIRSTXML%/graphics/logo3/orderondoordash.png" 
+         onclick="
+getmessage(urltoopen,logo3websiteurl);openurl(get(urltoopen),_blank);
+"
+
+         height="10%"
+         width="10%"
+
+         />
+
+  <events name="logo3events" 
+    onTourStart="showlogo3();"
+    hidetourcontrols="hidelogo3();"
+    showtourcontrols="showlogo3();"
+    keep="true" />
+
+  <action name="hidelogo3">
+    set(layer[logo3].visible, false);
+  </action>
+  <action name="showlogo3">
+    if (tour_displaycontrols,
+      set(layer[logo3].visible, true);
+    );
+  </action>
+
+
+
+
+
+<!-- ********** -->
+<!-- Seamless.com -->
+<!-- id : logo4 -->
+<!-- ********** -->
+
+
+  <layer align="topleft"
+         x="300"
+         y="10"
+         zorder="7"
+         name="logo4"
+         keep="true"
+         visible="false"
+         capture="false"
+
+         url="%FIRSTXML%/graphics/logo4/orderonseamless.png" 
+         onclick="
+getmessage(urltoopen,logo4websiteurl);openurl(get(urltoopen),_blank);
+"
+
+         height="10%"
+         width="10%"
+
+         />
+
+  <events name="logo4events" 
+    onTourStart="showlogo4();"
+    hidetourcontrols="hidelogo4();"
+    showtourcontrols="showlogo4();"
+    keep="true" />
+
+  <action name="hidelogo4">
+    set(layer[logo4].visible, false);
+  </action>
+  <action name="showlogo4">
+    if (tour_displaycontrols,
+      set(layer[logo4].visible, true);
+    );
+  </action>
+
+
+
+
+
+<!-- ********** -->
+<!-- Hemingway&#39;s - Marietta, GA -->
+<!-- id : extendedtitle -->
+<!-- ********** -->
+
+  <events name="extendedtitle_events" 
+    onTourStart="showextendedtitle();"
+    hidetourcontrols="hideextendedtitle();" 
+    showtourcontrols="showextendedtitle();" 
+    changetourlanguage="changeLanguageextendedtitle"
+    keep="true" />
+  <action name="hideextendedtitle">set(layer[extendedtitle].visible, false);</action>
+  <action name="showextendedtitle">
+    if (tour_displaycontrols,
+    set(layer[extendedtitle].visible, true );
+    ,
+      set(layer[extendedtitle].visible, false );
+    );
+  </action>
+  <action name="changeLanguageextendedtitle">
+    updateextendedtitle();
+  </action>
+
+  <action name="updateextendedtitle">
+    getmessage(layer[extendedtitle].html, extendedtitlecustomtitle);
+    escape(layer[extendedtitle].html);
+  </action>
+
+
+  <layer name="extendedtitle" keep="true" zorder="8"
+         type="text"
+         align="topright" x="0" y="0"
+         onloaded="getmessage(html,extendedtitlecustomtitle);escape(html);"
+         bg="false" 
+         bgborder="0"
+         alpha="0.80000000000000004"
+         visible="false"
+         capture="false" handcursor="false" enabled="false"
+         interactivecontent="false" 
+         txtshadow="1.0 1.0 4.0 0x000000 1.0"
+         css="text-align:right;
+              color:#f0cf72;
+              font-family:Lucida Sans;
+              font-weight:bold;
+              font-size:16px;"/>
+
+<action name="viewControlMoveUp">
+	if(%1,
+		if(%2,
+			set(isfullvertical, false);
+			ifnot(scene[get(xml.scene)].planar,
+				sub(viewvfov, panoview.vmax, panoview.vmin);
+				if (viewvfov == 180,
+					set(isfullvertical, true);
+				);
+			);
+			if(isfullvertical == false AND calc(view.vlookat-%2) LT view.vlookatmin,
+				moveto(get(view.hlookat), get(view.vlookatmin));
+			,
+				moveto(get(view.hlookat), calc(view.vlookat-%2));
+			);
+		,
+			set(vlookat_moveforce, -1);
+			delayedcall(0.1, viewControlMoveVertStop());
+		);
+	,
+		set(vlookat_moveforce, -1);
+	);
+</action>
+<action name="viewControlMoveDown">
+	if(%1,
+		if(%2,
+			set(isfullvertical, false);
+			ifnot(scene[get(xml.scene)].planar,
+				sub(viewvfov, panoview.vmax, panoview.vmin);
+				if (viewvfov == 180,
+					set(isfullvertical, true);
+				);
+			);
+			if(sceneisfull360 == false AND calc(view.vlookat+%2) GT view.vlookatmax,
+				moveto(get(view.hlookat), get(view.vlookatmax));
+			,
+				moveto(get(view.hlookat), calc(view.vlookat+%2));
+			);
+		,
+			set(vlookat_moveforce, +1);
+			delayedcall(0.1, viewControlMoveVertStop());
+		);
+	,
+		set(vlookat_moveforce, +1);
+	);
+</action>
+<action name="viewControlMoveLeft">
+	if(%1,
+		if(%2,
+			set(isfullhorizontal, false);
+			ifnot(scene[get(xml.scene)].planar,
+				sub(viewhfov, panoview.hmax, panoview.hmin);
+				if (viewhfov == 360,
+					set(isfullhorizontal, true);
+				);
+			);
+			if(isfullhorizontal == false AND calc(view.hlookat-%2) LT view.hlookatmin,
+				moveto(get(view.hlookatmin), get(view.vlookat));
+			,
+				moveto(calc(view.hlookat-%2), get(view.vlookat));
+			);
+		,
+			set(hlookat_moveforce, -1);
+			delayedcall(0.1, viewControlMoveHoriStop());
+		);
+	,
+		set(hlookat_moveforce, -1);
+	);
+</action>
+<action name="viewControlMoveRight">
+	if(%1,
+		if(%2,
+			set(isfullhorizontal, false);
+			ifnot(scene[get(xml.scene)].planar,
+				sub(viewhfov, panoview.hmax, panoview.hmin);
+				if (viewhfov == 360,
+					set(isfullhorizontal, true);
+				);
+			);
+			if(isfullhorizontal == false AND calc(view.hlookat+%2) GT view.hlookatmax,
+				moveto(get(view.hlookatmax), get(view.vlookat));
+			,
+				moveto(calc(view.hlookat+%2), get(view.vlookat));
+			);
+		,
+			set(hlookat_moveforce, +1);
+			delayedcall(0.1, viewControlMoveHoriStop());
+			
+		);
+	,
+		set(hlookat_moveforce, +1);
+	);
+</action>
+<action name="viewControlMoveHoriStop">
+	set(hlookat_moveforce, 0);
+</action>
+<action name="viewControlMoveVertStop">
+	set(vlookat_moveforce, 0);
+</action>
+
+  <action name="displayImage">
+    if (layer[displayedStandardImage],
+      if(layer[displayedStandardImage].doNotDeleteMe,
+        set(layer[displayedStandardImage].currentCall, false);
+        set(layer[displayedStandardImage].doNotDeleteMe, false);
+        
+        if (%1 == layer[displayedStandardImage].url,
+          applyDisplayedImageObjectAnimation(%8);
+        ,
+          setDisplayedImageObjectParameters(%1, %2, %3, %4, %5, %6, %7, %8, %9, %10);
+        );
+      ,
+        set(layer[displayedStandardImage].currentCall, false);
+        set(layer[displayedStandardImage].doNotDeleteMe, true);
+        events.dispatch(onremovedisplayedobject);
+        delayedcall(0.2,displayImage(%1, %2, %3, %4, %5, %6, %7, %8, %9, %10, %11, %12););
+      );
+    ,
+      if(%10,
+        addlayer(displayedStandardImageOverlay);
+        set(layer[displayedStandardImageOverlay].keep, false);
+        set(layer[displayedStandardImageOverlay].width, 100%);
+        set(layer[displayedStandardImageOverlay].height, 100%);
+        set(layer[displayedStandardImageOverlay].type, container);
+        set(layer[displayedStandardImageOverlay].zorder, 98);
+        set(layer[displayedStandardImageOverlay].visible, false);
+        set(layer[displayedStandardImageOverlay].onclick, applyDisplayedImageObjectAnimation(%8););
+        set(layer[displayedStandardImageOverlay].bgcolor, "0x%11");
+        set(layer[displayedStandardImageOverlay].bgalpha, %12);
+        set(layer[displayedStandardImageOverlay].bgcapture, true);
+      );
+      addlayer(displayedStandardImage);
+      set(layer[displayedStandardImage].keep, false);
+      set(layer[displayedStandardImage].onclick, applyDisplayedImageObjectAnimation(%8););
+      set(layer[displayedStandardImage].zorder , 99);
+      set(layer[displayedStandardImage].currentCall, true);
+      set(layer[displayedStandardImage].doNotDeleteMe, true);
+      set(layer[displayedStandardImage].onloaded, resizeDisplayedImageObject());
+      events.dispatch(onremovedisplayedobject);
+      delayedcall(0.2,displayImage(%1, %2, %3, %4, %5, %6, %7, %8, %9, %10, %11, %12););
+      set(layer[displayedStandardImage].visible, false);
+    );
+  </action>
+  <action name="applyDisplayedImageObjectAnimation">resumeautorotation(forcehotspot);
+
+    if (%1,
+      stoptween(layer[displayedStandardImage].width, layer[displayedStandardImage].height);
+      tween(layer[displayedStandardImage].width|layer[displayedStandardImage].height, 1|1, 1, easeOutQuad, WAIT);
+      if(layer[displayedStandardImage].overlay,removelayer(displayedStandardImageOverlay););removelayer(displayedStandardImage);
+    ,
+      if(layer[displayedStandardImage].overlay,removelayer(displayedStandardImageOverlay););removelayer(displayedStandardImage);
+    );
+  </action>
+  <action name="setDisplayedImageObjectParameters">
+    set(layer[displayedStandardImage].url       , %1);
+    set(layer[displayedStandardImage].align     , %2);
+    set(layer[displayedStandardImage].x         , %3);
+    set(layer[displayedStandardImage].y         , %4);
+    set(layer[displayedStandardImage].imgwidth  , %5);
+    set(layer[displayedStandardImage].imgheight , %6);
+    set(layer[displayedStandardImage].animated  , %8);
+    set(layer[displayedStandardImage].applyratio, %9);
+    set(layer[displayedStandardImage].overlay   , %10);
+    if (%7,pauseautorotation(forcehotspot);
+);
+  </action>
+  <action name="resizeDisplayedImageObject">
+    if(layer[displayedStandardImage].url,
+    set(layer[displayedStandardImage].fullwidth, get(layer[displayedStandardImage].width));
+    set(layer[displayedStandardImage].fullheight, get(layer[displayedStandardImage].height));
+    if(layer[displayedStandardImage].animated,
+      set(layer[displayedStandardImage].width , 1);
+      set(layer[displayedStandardImage].height, 1);
+    );
+    if(layer[displayedStandardImage].imgwidth != "" AND layer[displayedStandardImage].imgheight != "",
+      if(layer[displayedStandardImage].imgwidth == "prop",
+        set(tempDisplayedImageObjectHeight, get(layer[displayedStandardImage].imgheight));
+        indexoftxt(tempDisplayedImageObjectHeightPercent, get(tempDisplayedImageObjectHeight), "%");
+        if(tempDisplayedImageObjectHeightPercent GT 0,
+          txtreplace(tempDisplayedImageObjectHeight, '%', '');
+          mul(tempDisplayedImageObjectHeight, get(stageheight));
+          div(tempDisplayedImageObjectHeight, 100);
+          Math.round(tempDisplayedImageObjectHeight);
+        );
+        mul(flyingImgWidth,get(layer[displayedStandardImage].fullwidth),get(tempDisplayedImageObjectHeight));
+        div(flyingImgWidth,get(layer[displayedStandardImage].fullheight));
+        Math.round(flyingImgWidth);
+        set(layer[displayedStandardImage].imgwidth , get(flyingImgWidth));
+        set(layer[displayedStandardImage].imgheight, get(tempDisplayedImageObjectHeight));
+      ,
+        if(layer[displayedStandardImage].imgheight == "prop",
+          set(tempDisplayedImageObjectWidth, get(layer[displayedStandardImage].imgwidth));
+          indexoftxt(tempDisplayedImageObjectWidthPercent, get(tempDisplayedImageObjectWidth), "%");
+          if(tempDisplayedImageObjectWidthPercent GT 0,
+            txtreplace(tempDisplayedImageObjectWidth, '%', '');
+            mul(tempDisplayedImageObjectWidth, get(stagewidth));
+            div(tempDisplayedImageObjectWidth, 100);
+            Math.round(tempDisplayedImageObjectWidth);
+          );
+          mul(flyingImgHeight,get(layer[displayedStandardImage].fullheight),get(tempDisplayedImageObjectWidth));
+          div(flyingImgHeight,get(layer[displayedStandardImage].fullwidth));
+          Math.round(flyingImgHeight);
+          set(layer[displayedStandardImage].imgwidth , get(tempDisplayedImageObjectWidth));
+          set(layer[displayedStandardImage].imgheight , get(flyingImgHeight));
+        ,
+          set(tempDisplayedImageObjectWidth, get(layer[displayedStandardImage].imgwidth));
+          set(tempDisplayedImageObjectHeight, get(layer[displayedStandardImage].imgheight));
+          indexoftxt(tempDisplayedImageObjectWidthPercent, get(tempDisplayedImageObjectWidth), "%");
+          indexoftxt(tempDisplayedImageObjectHeightPercent, get(tempDisplayedImageObjectHeight), "%");
+          if(tempDisplayedImageObjectWidthPercent GT 0,
+            txtreplace(tempDisplayedImageObjectWidth, '%', '');
+            mul(tempDisplayedImageObjectWidth, get(stagewidth));
+            div(tempDisplayedImageObjectWidth, 100);
+            Math.round(tempDisplayedImageObjectWidth);
+          );
+          if(tempDisplayedImageObjectHeightPercent GT 0,
+            txtreplace(tempDisplayedImageObjectHeight, '%', '');
+            mul(tempDisplayedImageObjectHeight, get(stageheight));
+            div(tempDisplayedImageObjectHeight, 100);
+            Math.round(tempDisplayedImageObjectHeight);
+          );
+          set(layer[displayedStandardImage].imgwidth , get(tempDisplayedImageObjectWidth));
+          set(layer[displayedStandardImage].imgheight, get(tempDisplayedImageObjectHeight));
+        );
+      );
+    ,
+      set(layer[displayedStandardImage].imgwidth , get(layer[displayedStandardImage].fullwidth));
+      set(layer[displayedStandardImage].imgheight, get(layer[displayedStandardImage].fullheight));
+    );
+    
+    set(resizedwidth, get(layer[displayedStandardImage].imgwidth));
+    set(resizedheight, get(layer[displayedStandardImage].imgheight));
+    if(layer[displayedStandardImage].applyratio,
+      sub(resizedstagewidth, get(stagewidth), get(layer[displayedStandardImage].x));
+      sub(resizedstageheight, get(stageheight), get(layer[displayedStandardImage].y));
+      Math.abs(resizedstagewidth);
+      Math.abs(resizedstageheight);
+      if(resizedwidth GT resizedstagewidth,
+        mul(tempresizedheight, get(resizedheight), get(resizedstagewidth));
+        div(tempresizedheight, get(resizedwidth));
+        Math.round(tempresizedheight);
+        set(resizedwidth, get(resizedstagewidth));
+        set(resizedheight, get(tempresizedheight));
+      );
+      if(resizedheight GT resizedstageheight,
+        mul(tempresizedwidth, get(resizedwidth), get(resizedstageheight));
+        div(tempresizedwidth, get(resizedheight));
+        Math.round(tempresizedwidth);
+        set(resizedheight, get(resizedstageheight));
+        set(resizedwidth, get(tempresizedwidth));
+      );
+    );
+    
+    if(layer[displayedStandardImage].animated,
+      set(layer[displayedStandardImage].animated, false);
+      tween(layer[displayedStandardImage].width , get(resizedwidth), 1, easeOutQuad);
+      tween(layer[displayedStandardImage].height, get(resizedheight), 1, easeOutQuad);
+    ,
+      set(layer[displayedStandardImage].width , get(resizedwidth));
+      set(layer[displayedStandardImage].height, get(resizedheight));
+    );
+    if(layer[displayedStandardImage].overlay,set(layer[displayedStandardImageOverlay].visible, true););
+    set(layer[displayedStandardImage].visible, true);
+    ,
+      delayedcall(0.2,resizeDisplayedImageObject(););
+    );
+  </action>
+  <events name="displayedImageObjectEvents" keep="true" onremovedisplayedobject="displayedImageObjectOnRemoveDisplayedObject" onresize="if(layer[displayedStandardImage],resizeDisplayedImageObject());" />
+  <action name="displayedImageObjectOnRemoveDisplayedObject">
+    ifnot(layer[displayedStandardImage].currentCall,if(layer[displayedStandardImage].visible,resumeautorotation(forcehotspot);
+
+      if(layer[displayedStandardImage].overlay,removelayer(displayedStandardImageOverlay););
+      removelayer(displayedStandardImage);
+    ););
+  </action>
+
+
+  <!-- Hide / Show Controls -->
+  <action name="hideTourControls">set(tour_displaycontrols, false);events.dispatch(hidetourcontrols);</action>
+  <action name="showTourControls">set(tour_displaycontrols, true); events.dispatch(showtourcontrols);</action>
+
+
+<action name="viewControlZoomIn">
+	if(%1,
+		if(%2,
+			if(%2 LT view.fovmin,
+				zoomto(get(view.fovmin));
+			,
+				if(%2 LT view.fov,
+					zoomto(%2);
+				);
+			);
+		,
+			set(fov_moveforce, -1);
+			delayedcall(0.1, viewControlZoomStop());
+		);
+	,
+		set(fov_moveforce, -1);
+	);
+</action>
+<action name="viewControlZoomOut">
+	if(%1,
+		if(%2,
+			if(%2 GT view.fovmax,
+				zoomto(get(view.fovmax));
+			,
+				if(%2 GT view.fov,
+					zoomto(%2);
+				);
+			);
+		,
+			set(fov_moveforce, +1);
+			delayedcall(0.1, viewControlZoomStop());
+		);
+	,
+		set(fov_moveforce, +1);
+	);
+</action>
+<action name="viewControlZoomStop">
+	set(fov_moveforce, 0);
+</action>
+
+  <!-- Fullscreen Management -->
+  <action name="exitFullScreen" devices="fullscreensupport">set(tour_fullscreen,false);set(fullscreen,false);</action>
+  <action name="enterFullScreen" devices="fullscreensupport">set(tour_fullscreen,true);set(fullscreen,true);</action>
+  <action name="switchFullScreen">if(tour_fullscreen,exitFullScreen();,enterFullScreen(););</action>
+
+  
+  <events name="krpanoExitFullscreenEvent"
+    onexitfullscreen="if(tour_fullscreen,exitFullScreenChangeEvent(););"
+    keep="true" />
+
+  <action name="exitFullScreenChangeEvent" devices="fullscreensupport">set(tour_fullscreen,false);events.dispatch(onexitfullscreen);</action>
+
+</krpano>
