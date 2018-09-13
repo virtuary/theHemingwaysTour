@@ -91,7 +91,7 @@
        planar="false"
        full360="true"
        video="false"
-       seen="false">
+       seen="true">
     <autorotate horizon="-0.225000" tofov="108.900000" waittime="0" speed="-2"/>
     <panoview h="23.625000" v="-0.225000" fov="108.900000" hmin="-180" hmax="180" vmin="-90" vmax="90" fovmax="180" />
     <view fisheye="0"
